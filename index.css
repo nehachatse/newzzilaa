@@ -62,7 +62,25 @@
 #page{
     width: 80%;
     margin: 10px auto;
-    height: 40px;
+}
+#pagination{
+    width: 70%;
+    height: 50px;
+    margin: 0px auto;
+    text-align: center;
+}
+#pagination > button{
+    width: 15%;
+    height: 30px;
+    margin-left: 1%;
+    border-radius: 10px;
+    background-color: orangered;
+    border: 1px solid orangered;
+    color: white;
+}
+#pagination > button:hover{
+    background-color: white;
+    color: orangered;
 }
 #container{
     width: 95%;
