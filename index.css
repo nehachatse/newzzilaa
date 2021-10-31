@@ -13,13 +13,27 @@
 }
 #title{
     width: 20%;
-    margin: 20px;
+    margin: 1%;
     letter-spacing: 2px;
+    font-size: 30px;
     float: left;
 }
+#navEle{
+    float: left;
+    width: 40%;
+    margin: 1% 0 0 17%;
+}
+#navEle > a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    width: 15%;
+    margin: 10px;
+
+}
 #search{
-    margin: 15px 70px;  
-    float: right;
+    margin: 1% 2% 0 1%; 
+    float: left;
 }
 #search input{
     height: 23px;
@@ -38,6 +52,12 @@
 #search button:hover{
     background-color: white;
     color: orangered;
+}
+.visible{
+    display: block;
+}
+.hidden{
+    display: none;
 }
 #page{
     width: 80%;

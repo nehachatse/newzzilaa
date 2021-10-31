@@ -5,7 +5,7 @@
         async function fetchNews(){
             try{
                 loading(true);
-                await getNews();
+                await getTech();
                 
             }
             catch(err){
@@ -25,25 +25,22 @@
             }
             
         }
-
-        async function getNews(){
-            fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${api_key}`)
+        
+        function getTech(){
+            fetch(`https://newsapi.org/v2/top-headlines?category=technology&language=en&apiKey=${api_key}`)
             .then(function(response){
+                
                 return response.json();
             })
             .then(function(response){
+                console.log(response)
                 response = response.articles;
-                console.log(response[0])
                 postNews(response);
-            })
-            .catch(function(err){
-
             })
         }
 
-
         function postNews(newsData){
-            var page = document.getElementById('page');
+            var page = document.getElementById('techPage');
             page.textContent = "";
 
             var container = document.createElement('div');
@@ -125,6 +122,5 @@
             }
 
             page.appendChild(container)
-            loading(false)
-            
+            loading(false);
         }

@@ -5,7 +5,7 @@
         async function fetchNews(){
             try{
                 loading(true);
-                await getNews();
+                await getEnter();
                 
             }
             catch(err){
@@ -25,25 +25,21 @@
             }
             
         }
-
-        async function getNews(){
-            fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${api_key}`)
-            .then(function(response){
+        
+        function getEnter(){
+            fetch(`https://newsapi.org/v2/top-headlines?category=entertainment&language=en&apiKey=${api_key}`)
+            .then(function(response){          
                 return response.json();
             })
             .then(function(response){
+                console.log(response)
                 response = response.articles;
-                console.log(response[0])
                 postNews(response);
-            })
-            .catch(function(err){
-
             })
         }
 
-
         function postNews(newsData){
-            var page = document.getElementById('page');
+            var page = document.getElementById('enterPage');
             page.textContent = "";
 
             var container = document.createElement('div');
@@ -123,8 +119,8 @@
 
                 }
             }
-
+            loading(false);
             page.appendChild(container)
-            loading(false)
+            
             
         }
